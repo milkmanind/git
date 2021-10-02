@@ -58,6 +58,12 @@ int tmp_objdir_destroy(struct tmp_objdir *);
 void tmp_objdir_add_as_alternate(const struct tmp_objdir *);
 
 /*
+ * Replaces the main object store in the current process with the temporary
+ * object directory and makes the former main object store an alternate.
+ */
+void tmp_objdir_replace_main_odb(struct tmp_objdir *);
+
+/*
  * Add the temporary object directory as the *primary* object store in the
  * current process, turning the previous primary object store into an
  * alternate.
